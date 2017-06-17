@@ -4,16 +4,17 @@ public class MaxProduct {
 	
 	public static void main(String[] args) {
 		int[] set = {-8, 6, -7, 3, 2, 1, -9};
-		System.out.println(maxProductFinderK(set, 5));
+		System.out.println(maxProductFinderK(set, 2));
+		System.out.println(maxProductFinder(new int[] {-6, -8, 4, 2, 5, 3, -1, 9, 10}));
 		System.out.println(maxProductFinder(set));
 	}
 
 	public static int maxProductFinder(int[] n) {
-		return maxProductFinderK(new int[3], n, 3, 0, new int[1]); 
+		return maxProductFinderK(n, 3); 
 	}
 	
 	public static int maxProductFinderK(int[] n, int k) { 
-	    return maxProductFinderK(new int[k], n, k, 0, new int[1]); 
+	    return maxProductFinderK(new int[k], n, k, 0, new int[] { (int) Double.NEGATIVE_INFINITY }); 
 	}
 
 	private static int maxProductFinderK(int[] cur, int[] n, int k, int index, int products[]) {
